@@ -5,7 +5,7 @@ import Jokes from './Jokes'
 function App() {
   return (
     <div className="App">
-      Hello World.
+      
       <Jokes />
     </div>
   );
