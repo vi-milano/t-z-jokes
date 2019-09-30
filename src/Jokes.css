@@ -1,70 +1,79 @@
 .Jokes{
-    background-color: rgba(28, 120, 224, 0.5);
+    /* background-color: rgba(28, 120, 224, 0.5); */
+    background-image: linear-gradient(135deg, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 50%,rgb(218, 54, 240) 50%,rgb(222, 30, 212) 100%);
     display: flex;
     height: 100%;
     justify-content: center;
+    align-items: center;
     
 }
 
 .Jokes-button-container{
-    width: 40%;
+    
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
- 
+    height: 90%;
     flex-direction: column;
-
+    background: rgba(137, 36, 214, 1);
+    border-radius: 3px;
+    filter: drop-shadow(1px 1px 1px #020213);
+    padding: 0 15px;
 }
 
 .jokeList{
     width: 60%;
-    margin: 50px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
+    height: 80%;
+    padding-bottom: 10px;    
     background-color:white;
 }
 
 .Jokes-text{
+    font-family: 'Permanent Marker', cursive;
+    color: white;
     font-size: 3em;
+    cursor: default;
+}
+
+.Jokes-emoji{
+    font-size: 7em;
+    cursor: default;
 }
 
 .Jokes-button{
     height: 60px;
     width: 120px;
     text-align: center;
-    border: 1px solid black;
+    
     padding: 5px;
-    border-radius: 5px;
-    background-color: rgba(255, 251, 0, 0.699);
-    color: black;
+    border-radius: 10px;
+    background-color: rgb(155, 16, 62);
+    
+    color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: monospace;
-    font-size: 1.5em;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3em;
+    filter: drop-shadow(1px 1px 1px #020213);
 }
 .Jokes-button:hover{
-    background-color: rgba(226, 222, 2, 0.699);
+    background-color: rgb(211, 22, 85);
 }
 
 .Loader-container{
     width: 60%;
-    display: flex;
-    align-items: center;
+    height: 80%;    
+    display: flex;    
     flex-direction: column;
-    justify-content: center;
-    background-color: white;
-    
-    margin: 50px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;   
     background-color:white;
+    padding-bottom: 10px;  
 }
   .Loader{    
-    animation: spin 3s infinite;
+    animation: spin 7s infinite;
     font-size: 100px;
     display: block;
   }

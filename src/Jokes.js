@@ -104,7 +104,7 @@ export default class Jokes extends Component {
     render(){
         
         let loader = <div className="Loader-container">
-            <i className="Loader far fa-grin-squint-tears"></i>
+            <i class="Loader fab fa-react"></i>
             <p style={{textAlign: 'center'}}>Dad is fetching some jokes...</p>
             </div>;
 
@@ -116,11 +116,12 @@ export default class Jokes extends Component {
 
         return(<div className="Jokes">
             <div className="Jokes-button-container">
-                <p className="Jokes-text">Dad Jokes!</p>
+                <div className="Jokes-text">Dad Jokes!</div>
+                <div className="Jokes-emoji">🤪</div>
                 <div className="Jokes-button" onClick={()=>{
                     this.setState({isLoaded: false});
                     this.reloadJokes();
-                }}>Fetch Jokes</div>
+                }}>New Jokes</div>
             </div>
             { this.state.isLoaded ? jokeList : loader  }
         

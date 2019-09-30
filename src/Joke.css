@@ -8,3 +8,53 @@
     border-bottom: 0;
 }
 
+.Joke-votes {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid black;
+    border-radius: 25px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    background-color: white;
+    filter: drop-shadow(2px 2px 1px #020213)
+}
+
+.Joke-votes-container {
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.Joke-text{
+    font-family: 'Underdog', cursive;
+    padding-left: 10px;
+    width: 90%;
+    
+}
+
+.Joke-vote-up{
+    cursor: pointer;
+    color: green;
+}
+
+.Joke-vote-up:hover{
+   
+    color: rgb(1, 197, 1);
+    filter: drop-shadow(1px 1px 1px #020213)
+}
+
+.Joke-vote-down{
+    cursor: pointer;
+    color: red;
+}
+
+.Joke-vote-down:hover{
+   
+    color: rgb(179, 2, 2);
+    filter: drop-shadow(1px 1px 1px #020213)
+}
