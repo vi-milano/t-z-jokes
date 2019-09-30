@@ -25,14 +25,14 @@ export default class Joke extends Component {
             <div className="Joke-votes-container">
 
                 <div onClick={this.upVoteHandler}> 
-                <i class="Joke-vote-up fas fa-angle-double-up"></i>
+                <i className="Joke-vote-up fas fa-angle-double-up"></i>
                 </div>
 
                 <div className="Joke-votes">{this.props.votes}
                 </div>
                 
                 <div onClick={this.downVoteHandler}> 
-                <i class="Joke-vote-down fas fa-angle-double-down"></i>
+                <i className="Joke-vote-down fas fa-angle-double-down"></i>
                 </div>
 
             </div>

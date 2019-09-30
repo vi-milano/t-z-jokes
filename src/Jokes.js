@@ -18,31 +18,43 @@ export default class Jokes extends Component {
     }
 
     async componentDidMount(){
-        const URL = 'https://icanhazdadjoke.com/';
-       
-        let config = {
-            headers: {
-                'Accept' : 'application/json'
-            }
-        }
-        let jokesArr = [];
-        for(let i = 0; i<10; i++){
-            let response = await axios.get(
-                URL, config
-            )            
-            
-            if(!jokesArr.some(j=> j.id === response.data.id)){
-                jokesArr.push({id: response.data.id, joke: response.data.joke, votes: 0});
-            } else {
-                i--;
-            }
 
+        let storedJokes = JSON.parse(localStorage.getItem('@t-z-jokes/jokes'));
+        console.log(storedJokes);
+        if(storedJokes !== null && storedJokes.length > 0){           
             
+            this.setState({jokes: storedJokes, isLoaded: true});
+        } else {
+            const URL = 'https://icanhazdadjoke.com/';
+       
+            let config = {
+                headers: {
+                    'Accept' : 'application/json'
+                }
+            }
+            let jokesArr = [];
+            for(let i = 0; i<10; i++){
+                let response = await axios.get(
+                    URL, config
+                )            
+                
+                if(!jokesArr.some(j=> j.id === response.data.id)){
+                    jokesArr.push({id: response.data.id, joke: response.data.joke, votes: 0});
+                } else {
+                    i--;
+                }          
+                
+            }
             
+            this.setState({jokes: jokesArr, isLoaded: true});
         }
-        this.setState({jokes: jokesArr, isLoaded: true});
+
+        
     }
 
+    componentDidUpdate(){
+        localStorage.setItem('@t-z-jokes/jokes', JSON.stringify(this.state.jokes));
+    }
 
     
     async reloadJokes(){
@@ -63,10 +75,7 @@ export default class Jokes extends Component {
                 jokesArr.push({id: response.data.id, joke: response.data.joke, votes: 0});
             } else {
                 i--;
-            }
-
-            
-            
+            }            
         }
         this.setState({jokes: jokesArr, isLoaded: true});
     }
@@ -101,10 +110,10 @@ export default class Jokes extends Component {
       
     }
 
-    render(){
+    render(){        
         
         let loader = <div className="Loader-container">
-            <i class="Loader fab fa-react"></i>
+            <i className="Loader fab fa-react"></i>
             <p style={{textAlign: 'center'}}>Dad is fetching some jokes...</p>
             </div>;
 
@@ -115,6 +124,7 @@ export default class Jokes extends Component {
         </div>;
 
         return(<div className="Jokes">
+            
             <div className="Jokes-button-container">
                 <div className="Jokes-text">Dad Jokes!</div>
                 <div className="Jokes-emoji">🤪</div>
