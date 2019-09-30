@@ -20,10 +20,10 @@ export default class Joke extends Component {
     }
 
     render(){
-        return(<div>
-            <div>
+        return(<div className="Joke">
+            
             <span onClick={this.upVoteHandler}> + </span>{this.props.votes} <span onClick={this.downVoteHandler}> - </span> : {this.props.joke}
-            </div>
+            
             </div>)
     };
 }

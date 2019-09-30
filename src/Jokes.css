@@ -1,31 +1,75 @@
-.loader{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    position: relative;
-    margin: 0 auto;
-  }
-
-#loader-1:before, #loader-1:after{
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 100%;
+.Jokes{
+    background-color: rgba(28, 120, 224, 0.5);
+    display: flex;
     height: 100%;
-    border-radius: 100%;
-    border: 10px solid transparent;
-    border-top-color: #91c500;
+    justify-content: center;
+    
+}
+
+.Jokes-button-container{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    flex-direction: column;
+
+}
+
+.jokeList{
+    width: 60%;
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color:white;
+}
+
+.Jokes-text{
+    font-size: 3em;
+}
+
+.Jokes-button{
+    height: 60px;
+    width: 120px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 251, 0, 0.699);
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+.Jokes-button:hover{
+    background-color: rgba(226, 222, 2, 0.699);
+}
+
+.Loader-container{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color:white;
+}
+  .Loader{    
+    animation: spin 3s infinite;
+    font-size: 100px;
+    display: block;
   }
   
-  #loader-1:before{
-    z-index: 100;
-    animation: spin 1s infinite;
-  }
-  
-  #loader-1:after{
-    border: 10px solid #ccc;
-  }
+
   
   @keyframes spin{
     0%{
